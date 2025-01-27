@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+        }
+        .orbit-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .dot1 { animation: orbit 4s linear infinite; background-color: #FF69B4; }
+        .dot2 { animation: orbit 4s linear infinite; animation-delay: -1s; background-color: #4B0082; }
+        .dot3 { animation: orbit 4s linear infinite; animation-delay: -2s; background-color: #00FFFF; }
+        .dot4 { animation: orbit 4s linear infinite; animation-delay: -3s; background-color: #FFD700; }
+    </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col items-center p-6">
+    <div class="w-full max-w-sm">
+            <h1 class="w-full text-3xl md:text-4xl font-bold mb-4 text-black text-center">
+                Welcome To Finance Carnival
+            </h1>
+            <h2 class="text-lg md:text-xl font-semibold text-black text-center mb-6">
+                Organised by FinTech Club
+           </h2>
+        
+        
+        
+        <div class="relative flex justify-center items-center mb-8">
+            <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+            </div>
+            <div class="orbit-dot dot1"></div>
+            <div class="orbit-dot dot2"></div>
+            <div class="orbit-dot dot3"></div>
+            <div class="orbit-dot dot4"></div>
+        </div>
+
+        <form id="loginForm" class="space-y-4">
+            <div>
+                <input 
+                    type="text" 
+                    id="registration" 
+                    placeholder="Registration No."
+                    class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                    required
+                >
+            </div>
+            
+            <div>
+                <input 
+                    type="password" 
+                    id="password" 
+                    placeholder="Password"
+                    class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400"
+                    required
+                >
+                <label class="text-sm text-gray-500 mt-2 block">
+                    <input 
+                        type="checkbox" 
+                        id="showPassword" 
+                        class="mr-2"
+                    >
+                    Show Password
+                </label>
+            </div>
+
+            <button 
+                type="submit"
+                class="w-full py-3 bg-gray-400 text-white rounded-md hover:bg-gray-500 transition-colors"
+            >
+                Login
+            </button>
+        </form>
+        <p id="errorMessage" class="text-red-500 text-center mt-4 hidden">Invalid credentials. Please try again.</p>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('showPassword');
+
+        // Toggle password visibility with checkbox
+        showPasswordCheckbox.addEventListener('change', (e) => {
+            passwordInput.type = e.target.checked ? 'text' : 'password';
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const registration = document.getElementById('registration').value;
+            const password = document.getElementById('password').value;
+
+            // Authentication logic (replace with actual server-side verification)
+            const validUsername = "user123";
+            const validPassword = "password123";
+
+            if (registration === validUsername && password === validPassword) {
+                // Redirect to the home page
+                window.location.href = "home.html";
+            } else {
+                // Show an error message
+                document.getElementById('errorMessage').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
