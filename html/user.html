@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="w-full bg-black text-white p-4 flex justify-center items-center relative">
+        <!-- Back Button -->
+        <button onclick="location.href='home.html'" class="absolute left-4 text-white text-2xl">
+            &#x2190;
+        </button>
+        <h1 class="text-xl font-bold">User Profile</h1>
+    </header>
+
+    <!-- User Profile Details -->
+    <div class="flex flex-col items-center mt-8 space-y-6">
+        <!-- User Name -->
+        <div class="w-4/5 sm:w-96 p-4 border-2 border-dashed border-purple-400 rounded-md">
+            <p class="text-gray-700 font-semibold">User Name</p>
+            <p class="text-gray-500 mt-1">Loading...</p>
+        </div>
+
+        <!-- Email Address -->
+        <div class="w-4/5 sm:w-96 p-4 border-2 border-dashed border-purple-400 rounded-md">
+            <p class="text-gray-700 font-semibold">Email Address</p>
+            <p class="text-gray-500 mt-1">Loading...</p>
+        </div>
+
+        <!-- User Score -->
+        <div class="w-4/5 sm:w-96 p-4 border-2 border-dashed border-purple-400 rounded-md">
+            <p class="text-gray-700 font-semibold">User Score</p>
+            <p class="text-gray-500 mt-1">Loading...</p>
+        </div>
+
+        <!-- Wallet Balance -->
+        <div class="w-4/5 sm:w-96 p-4 border-2 border-dashed border-purple-400 rounded-md">
+            <p class="text-gray-700 font-semibold">Wallet Balance</p>
+            <p class="text-gray-500 mt-1">Loading...</p>
+        </div>
+    </div>
+
+    <script>
+        // Simulated data: array of games played by the current user
+        document.addEventListener("DOMContentLoaded", function() {
+    // Simulated data (to be replaced with actual backend API response)
+    const userData = {
+        name: "John Doe",
+        email: "johndoe@example.com",
+        score: "1200",
+        balance: "50 coins"
+    };
+
+    // Updating the placeholders with actual data
+    document.querySelectorAll("p:nth-child(2)").forEach((p, index) => {
+        p.textContent = Object.values(userData)[index];
+    });
+});
+
+      </script>
+
+</body>
+</html>
