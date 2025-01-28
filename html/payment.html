@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex flex-col">
+        <button onclick="location.href='home.html'" class="absolute top-4 left-4 text-gray-700 text-2xl">&#x2190;</button>
+        <div class="flex justify-center mt-12">
+            <img src="../Assets/Money.png" alt="Payment" class="w-24 h-24">
+        </div>
+        <div class="mx-4 mt-6 border border-dashed border-purple-400 p-4 rounded-md">
+            <p class="block font-semibold text-gray-700">Game Details</p>
+            <p id="game-details" class="w-full p-2 border rounded mt-1 bg-gray-200">Loading...</p>
+            <p class="block font-semibold text-gray-700 mt-3">Amount</p>
+            <p id="amount" class="w-full p-2 border rounded mt-1 bg-gray-200">Loading...</p>
+        </div>
+        <div class="mx-4 mt-4 mb-6">
+            <button class="w-full bg-black text-white py-2 rounded">Pay</button>
+        </div>
+    </div>
+
+    <script>
+        // Simulating QR scan data
+        document.addEventListener("DOMContentLoaded", function() {
+            const gameDetails = "Example Game Name";
+            const amount = "50 coins";
+            document.getElementById("game-details").textContent = gameDetails;
+            document.getElementById("amount").textContent = amount;
+        });
+    </script>
+</body>
+</html>
