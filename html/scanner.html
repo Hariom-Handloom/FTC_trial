@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Scanner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white flex flex-col items-center justify-end h-screen pb-12">
+    <button onclick="location.href='home.html'" class="absolute top-4 left-4 text-gray-700 text-2xl">&#x2190;</button>
+    <button id="scanButton" class="bg-black text-white px-6 py-3 rounded-lg text-lg">
+        Scan
+    </button>
+
+    <script>
+        document.getElementById("scanButton").addEventListener("click", function() {
+            window.location.href = "payment.html"; // Redirect to payment page
+        });
+    </script>
+</body>
+</html>
